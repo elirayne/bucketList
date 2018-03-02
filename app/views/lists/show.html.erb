@@ -1,8 +1,30 @@
 
 <h1><%= @list.name %></h1>
 <hr>
-<p>info:</p>
+<h3> - Destinations: 
+  [<%= link_to 'add', new_list_destination_path(@list) %>]
+</h3>
 
+<ul>
+<% @list.destinations.each do |dest| %>
+  <li>
+  <%= dest.name %>
+  <%= dest.description %>
+  </li>
+<% end %>
+</ul>
 
+<p>
+<br>
 
-
+<h3> - Activities: 
+  [<%= link_to 'add', new_list_activity_path(@list) %>]
+</h3>
+<ul>
+<% @list.activities.each do |act| %>
+  <li>
+  <%= act.name %>
+  <%= act.description %>
+  </li>
+<% end %>
+</ul>

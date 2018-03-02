@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'activities/index'
+  resources :lists do
+    resources :destinations
+  end
 
-  get 'activities/show'
-
-  get 'activities/edit'
-
-  get 'activities/new'
-
-  root 'lists#index'
+    # best way for nested routes 3 deep
+    scope 'destinations/:destination_id', as: 'destination' do
+      resources :activities, only: [:new, :create]
+    end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,14 +1,20 @@
 
 <h1><%= @list.name %></h1>
+<%= link_to 'return to list', lists_path %>
 <hr>
 <h3> - Destinations: 
-  [<%= link_to 'add', new_list_destination_path(@list) %>]
+<!-- I dont think these really make sense.. but left them here for now -->
+  [ <%= link_to 'show', list_destinations_path(@list)%>
+    <%= link_to 'edit', edit_list_destination_path(@list)%>
+    <%= link_to 'add', new_list_destination_path(@list) %>
+    <%= link_to 'delete', new_list_destination_path(@list) %>
+     ]
 </h3>
 
 <ul>
 <% @list.destinations.each do |dest| %>
   <li>
-  <%= dest.name %>
+  <%= dest.location %>
   <%= dest.description %>
   </li>
 <% end %>
@@ -17,14 +23,17 @@
 <p>
 <br>
 
-<h3> - Activities: 
-  [<%= link_to 'add', new_list_activity_path(@list) %>]
+<h3> - Activities:
+  [ <%= link_to 'show', list_activity_path(@list)%>
+    <%= link_to 'edit', edit_list_activity_path(@list)%>
+    <%= link_to 'add', new_list_activity_path(@list) %>
+    <%= link_to 'delete', new_list_activity_path(@list) %>
+     ]
 </h3>
 <ul>
 <% @list.activities.each do |act| %>
   <li>
   <%= act.name %>
-  <%= act.description %>
   </li>
 <% end %>
 </ul>

@@ -3,7 +3,10 @@ class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show]
   
   def index
+    puts "here"
+    puts @list.destinations
     @destinations = @list.destinations
+    # @list = List.find(params[:list_id])
   end
 
   def show
@@ -49,11 +52,11 @@ class DestinationsController < ApplicationController
   private
   
     def set_list
-      @list = List.find(params[:id])
+      @list = List.find(params[:list_id])
     end
 
     def set_destination
-      @destination = Destination.find(params[:id])
+      @destination = Destination.find(params[:list_id])
     end
 
     def destination_params

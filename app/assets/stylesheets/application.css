@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* Indents all paragraphs */
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+p {
+  margin-left: 20px;
+}

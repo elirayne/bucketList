@@ -1,4 +1,4 @@
 class List < ApplicationRecord
-  has_many :lists, dependent: :destroy
-  has_one :activity, dependent: :destroy
+  has_many :activities, dependent: :destroy
+  has_one :destinations, dependent: :destroy
 end

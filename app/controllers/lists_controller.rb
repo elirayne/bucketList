@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :update, :edit, :destroy] 
   
   def index
-    @list = List.all
+    @lists = List.all
   end
 
   def show
@@ -44,7 +44,7 @@ class ListsController < ApplicationController
   private
 
     def set_list
-      @list = list.find(params[:id])
+      @list = List.find(params[:id])
     end
 
     def list_params

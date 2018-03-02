@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'lists#index'
+  get 'activities/index'
+
+  get 'activities/show'
+
+  get 'activities/edit'
 
   resource :lists do
     resource :destination

@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-  before_action :set_list, only[:index, :create]
+  before_action :set_list, only: [:index, :create]
   before_action :set_destination # TODO
   
   def index

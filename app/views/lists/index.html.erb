@@ -1,7 +1,9 @@
-<h1>Index</h1>
+<h1 class='title'>Welcome to your BucketList!</h1>
+<hr />
 
-<%= link_to 'Create a new List item', new_list_path %>
-<ul>
+<%= link_to 'Start a new bucketList', new_list_path %>
+
+<ul >
   <% @lists.each do |list| %>
     <li>
       <%= link_to list.name, lists_path(list) %>
@@ -10,3 +12,4 @@
     </li>
   <% end %>
 </ul>
+

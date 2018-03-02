@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
-  root 'lists#index'
+  get 'activities/index'
 
-  resource: :lists do
-    resource: :destination
-  end
+  get 'activities/show'
+
+  get 'activities/edit'
+
+  get 'activities/new'
+
+  root 'lists#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

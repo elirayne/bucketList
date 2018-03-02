@@ -3,7 +3,7 @@ class CreateDestinations < ActiveRecord::Migration[5.1]
     create_table :destinations do |t|
       t.string :location
       t.text :description
-      t.belongs_to :List, foreign_key: true
+      t.belongs_to :list, foreign_key: true
 
       t.timestamps
     end

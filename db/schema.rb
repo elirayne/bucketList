@@ -14,19 +14,19 @@ ActiveRecord::Schema.define(version: 20180302011720) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
-    t.integer "List_id"
+    t.integer "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["List_id"], name: "index_activities_on_List_id"
+    t.index ["list_id"], name: "index_activities_on_list_id"
   end
 
   create_table "destinations", force: :cascade do |t|
     t.string "location"
     t.text "description"
-    t.integer "List_id"
+    t.integer "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["List_id"], name: "index_destinations_on_List_id"
+    t.index ["list_id"], name: "index_destinations_on_list_id"
   end
 
   create_table "lists", force: :cascade do |t|

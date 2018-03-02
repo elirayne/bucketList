@@ -1,9 +1,9 @@
 class DestinationsController < ApplicationController
-  before_action :set_list, only: [:index, :create]
-  before_action :set_destination # TODO
+  before_action :set_list, only: [:index, :create, :new]
+  before_action :set_destination, only: [:show]
   
   def index
-    @destinations = @list.destinations  
+    @destinations = @list.destinations
   end
 
   def show
@@ -28,7 +28,7 @@ class DestinationsController < ApplicationController
 #   end
    
   def create
-    @destination = Destination.new(sub_params)
+    @destination = Destination.new(destination_params)
     if @destination.save
       redirect_to destinations_path
     else
@@ -49,11 +49,11 @@ class DestinationsController < ApplicationController
   private
   
     def set_list
-      @list = List.find(params[:list_id])
+      @list = List.find(params[:id])
     end
 
     def set_destination
-      @destination = List.find(params[:id])
+      @destination = Destination.find(params[:id])
     end
 
     def destination_params
